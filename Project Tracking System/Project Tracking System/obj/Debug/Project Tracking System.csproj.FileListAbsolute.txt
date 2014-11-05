@@ -1,0 +1,19 @@
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\bin\Debug\Project Tracking System.exe.config
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\bin\Debug\Project Tracking System.exe
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\bin\Debug\Project Tracking System.pdb
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project Tracking System.csprojResolveAssemblyReference.cache
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.mainMenu.resources
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.Properties.Resources.resources
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project Tracking System.csproj.GenerateResource.Cache
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project Tracking System.exe
+c:\users\danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project Tracking System.pdb
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.addHours.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.addRequirement.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.addRisk.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.editProject.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.NewProject.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.projectEdit.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.editEmployees.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.employeeInfo.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.viewRisksRequirements.resources
+C:\Users\Danny\documents\visual studio 2012\Projects\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.viewEffortHours.resources
