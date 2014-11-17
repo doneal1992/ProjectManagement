@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Project_Tracking_System;
+using Project_Tracking_System.Views;
 namespace Project_Tracking_System
 {
     public partial class mainMenu : Form
@@ -39,6 +40,12 @@ namespace Project_Tracking_System
         {
             Form editProject = new editProject();
             editProject.ShowDialog();
+        }
+
+        private void addManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form addManager = new addManager();
+            addManager.Show();
         }
     }
 }

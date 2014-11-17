@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DatabaseController.cs" />
+    <Compile Include="Views\addManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\addManager.Designer.cs">
+      <DependentUpon>addManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\viewEffortHours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\addHours.resx">
       <DependentUpon>addHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\addManager.resx">
+      <DependentUpon>addManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\addRequirement.resx">
       <DependentUpon>addRequirement.cs</DependentUpon>

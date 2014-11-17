@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_Tracking_System
 {
-    public partial class viewRisksRequirements : Form
+    public partial class addBtn : Form
     {
-        public viewRisksRequirements()
+        public addBtn()
         {
             InitializeComponent();
         }
@@ -22,6 +22,12 @@ namespace Project_Tracking_System
             this.Dispose();
             this.Close();
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addRequirement newReq = new addRequirement();
+            newReq.Show();
         }
     }
 }

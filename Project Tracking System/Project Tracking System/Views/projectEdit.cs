@@ -30,13 +30,13 @@ namespace Project_Tracking_System
 
         private void viewRiskBtn_Click(object sender, EventArgs e)
         {
-            Form viewRisks = new viewRisksRequirements();
+            Form viewRisks = new addBtn();
             viewRisks.ShowDialog();
         }
 
         private void viewReqBtn_Click(object sender, EventArgs e)
         {
-            Form viewRisks = new viewRisksRequirements();
+            Form viewRisks = new addBtn();
             viewRisks.ShowDialog();
         }
 

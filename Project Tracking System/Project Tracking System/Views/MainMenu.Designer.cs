@@ -36,6 +36,8 @@
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +79,8 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Window;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.managersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1041, 28);
@@ -116,6 +119,21 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // managersToolStripMenuItem
+            // 
+            this.managersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addManagerToolStripMenuItem});
+            this.managersToolStripMenuItem.Name = "managersToolStripMenuItem";
+            this.managersToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.managersToolStripMenuItem.Text = "Managers";
+            // 
+            // addManagerToolStripMenuItem
+            // 
+            this.addManagerToolStripMenuItem.Name = "addManagerToolStripMenuItem";
+            this.addManagerToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
+            this.addManagerToolStripMenuItem.Text = "Add Manager";
+            this.addManagerToolStripMenuItem.Click += new System.EventHandler(this.addManagerToolStripMenuItem_Click);
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +163,8 @@
         private System.Windows.Forms.ToolStripMenuItem newProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem managersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addManagerToolStripMenuItem;
     }
 }
 
