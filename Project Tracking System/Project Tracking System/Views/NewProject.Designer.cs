@@ -38,7 +38,7 @@
             this.projManagerLNameTextbox = new System.Windows.Forms.TextBox();
             this.projManagerIDTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.projDescriptionTxtBox = new System.Windows.Forms.RichTextBox();
             this.addEmpBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -135,13 +135,13 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Project Description";
             // 
-            // richTextBox1
+            // projDescriptionTxtBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(123, 149);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(752, 192);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.projDescriptionTxtBox.Location = new System.Drawing.Point(123, 149);
+            this.projDescriptionTxtBox.Name = "projDescriptionTxtBox";
+            this.projDescriptionTxtBox.Size = new System.Drawing.Size(752, 192);
+            this.projDescriptionTxtBox.TabIndex = 10;
+            this.projDescriptionTxtBox.Text = "";
             // 
             // addEmpBtn
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.addEmpBtn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.projDescriptionTxtBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.projManagerIDTextbox);
             this.Controls.Add(this.projManagerLNameTextbox);
@@ -244,7 +244,7 @@
         private System.Windows.Forms.TextBox projManagerLNameTextbox;
         private System.Windows.Forms.TextBox projManagerIDTextbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox projDescriptionTxtBox;
         private System.Windows.Forms.Button addEmpBtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Tracking_System.Controller;
 
 namespace Project_Tracking_System
 {
     public partial class NewProject : Form
     {
+        DatabaseController myController = new DatabaseController();
         public NewProject()
         {
             InitializeComponent();
@@ -24,8 +26,31 @@ namespace Project_Tracking_System
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Project Saved");
-            this.Close();
+            try
+            {
+                if (projNameTextBox.Text.Length > 0 && projManagerIDTextbox.Text.Length > 0 && projDescriptionTxtBox.Text.Length > 0)
+                {
+
+                    if (myController.newProject(Int32.Parse(projManagerIDTextbox.Text), projNameTextBox.Text, projDescriptionTxtBox.Text) == true)
+                    {
+                        MessageBox.Show("Project Saved");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("A project with that name already exists");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You must enter at least Project Name, Manager ID, and Description");
+                }
+            }
+            catch (FormatException idException)
+            {
+                MessageBox.Show("You must enter a number for Manager ID");
+            }
         }
 
         private void addEmpBtn_Click(object sender, EventArgs e)

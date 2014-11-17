@@ -26,23 +26,27 @@ namespace Project_Tracking_System.Views
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (fNameTxtBox.Text.Length > 0 && lnamelbl.Text.Length > 0 && idLbl.Text.Length > 0)
-            {
-                int idNumber = Int32.Parse(idNumberTxtBox.Text);
-                if (myController.addNewManager(fNameTxtBox.Text, lNameTextBox.Text, idNumber) == true)
+            
+                if (fNameTxtBox.Text.Length > 0 && lnamelbl.Text.Length > 0 && idLbl.Text.Length > 0)
                 {
-                    MessageBox.Show(fNameTxtBox.Text + " has been added");
-                    this.Close();
+                    int idNumber = Int32.Parse(idNumberTxtBox.Text);
+                    if (myController.addNewManager(fNameTxtBox.Text, lNameTextBox.Text, idNumber) == true)
+                    {
+                        MessageBox.Show(fNameTxtBox.Text + " has been added");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(fNameTxtBox.Text + " already exists");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(fNameTxtBox.Text + " already exists");
-                }
-            }
-            else{
-                MessageBox.Show("You must enter all information");
+                    MessageBox.Show("You must enter all information");
                     this.Close();
-            }
+                }
+            
+            
                 
         }
     }
