@@ -40,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.projDescriptionTxtBox = new System.Windows.Forms.RichTextBox();
             this.addEmpBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.addRequirementsBtn = new System.Windows.Forms.Button();
+            this.addRisksBtn = new System.Windows.Forms.Button();
+            this.addHoursBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -121,9 +121,10 @@
             // projManagerIDTextbox
             // 
             this.projManagerIDTextbox.Location = new System.Drawing.Point(465, 97);
+            this.projManagerIDTextbox.MaxLength = 8;
             this.projManagerIDTextbox.Name = "projManagerIDTextbox";
             this.projManagerIDTextbox.Size = new System.Drawing.Size(99, 20);
-            this.projManagerIDTextbox.TabIndex = 8;
+            this.projManagerIDTextbox.TabIndex = 9;
             // 
             // label1
             // 
@@ -151,37 +152,41 @@
             this.addEmpBtn.TabIndex = 11;
             this.addEmpBtn.Text = "Add Employee";
             this.addEmpBtn.UseVisualStyleBackColor = true;
+            this.addEmpBtn.Visible = false;
             this.addEmpBtn.Click += new System.EventHandler(this.addEmpBtn_Click);
             // 
-            // button2
+            // addRequirementsBtn
             // 
-            this.button2.Location = new System.Drawing.Point(316, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 22);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Add Requirements";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addRequirementsBtn.Location = new System.Drawing.Point(316, 361);
+            this.addRequirementsBtn.Name = "addRequirementsBtn";
+            this.addRequirementsBtn.Size = new System.Drawing.Size(126, 22);
+            this.addRequirementsBtn.TabIndex = 12;
+            this.addRequirementsBtn.Text = "Add Requirements";
+            this.addRequirementsBtn.UseVisualStyleBackColor = true;
+            this.addRequirementsBtn.Visible = false;
+            this.addRequirementsBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // addRisksBtn
             // 
-            this.button3.Location = new System.Drawing.Point(529, 361);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 22);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Add Risks";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.addRisksBtn.Location = new System.Drawing.Point(529, 361);
+            this.addRisksBtn.Name = "addRisksBtn";
+            this.addRisksBtn.Size = new System.Drawing.Size(126, 22);
+            this.addRisksBtn.TabIndex = 13;
+            this.addRisksBtn.Text = "Add Risks";
+            this.addRisksBtn.UseVisualStyleBackColor = true;
+            this.addRisksBtn.Visible = false;
+            this.addRisksBtn.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // addHoursBtn
             // 
-            this.button4.Location = new System.Drawing.Point(749, 361);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 22);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Add Hours";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.addHoursBtn.Location = new System.Drawing.Point(749, 361);
+            this.addHoursBtn.Name = "addHoursBtn";
+            this.addHoursBtn.Size = new System.Drawing.Size(126, 22);
+            this.addHoursBtn.TabIndex = 14;
+            this.addHoursBtn.Text = "Add Hours";
+            this.addHoursBtn.UseVisualStyleBackColor = true;
+            this.addHoursBtn.Visible = false;
+            this.addHoursBtn.Click += new System.EventHandler(this.button4_Click);
             // 
             // saveBtn
             // 
@@ -210,9 +215,9 @@
             this.ClientSize = new System.Drawing.Size(1005, 452);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.addHoursBtn);
+            this.Controls.Add(this.addRisksBtn);
+            this.Controls.Add(this.addRequirementsBtn);
             this.Controls.Add(this.addEmpBtn);
             this.Controls.Add(this.projDescriptionTxtBox);
             this.Controls.Add(this.label1);
@@ -246,9 +251,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox projDescriptionTxtBox;
         private System.Windows.Forms.Button addEmpBtn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button addRequirementsBtn;
+        private System.Windows.Forms.Button addRisksBtn;
+        private System.Windows.Forms.Button addHoursBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
     }

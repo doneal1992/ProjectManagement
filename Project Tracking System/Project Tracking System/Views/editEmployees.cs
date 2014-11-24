@@ -21,13 +21,13 @@ namespace Project_Tracking_System
         {
             this.Dispose();
             this.Close();
-            Form addEmployee = new employeeInfo();
+            Form addEmployee = new employeeInfo("");
             addEmployee.ShowDialog();
         }
 
         private void removeEmpBtn_Click(object sender, EventArgs e)
         {
-            Form removeEmployee = new employeeInfo();
+            Form removeEmployee = new employeeInfo("");
             removeEmployee.ShowDialog();
         }
     }

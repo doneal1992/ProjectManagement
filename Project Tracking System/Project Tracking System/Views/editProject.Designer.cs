@@ -32,6 +32,8 @@
             this.searchBtn = new System.Windows.Forms.Button();
             this.managerIDLbl = new System.Windows.Forms.Label();
             this.managerIDTxtbox = new System.Windows.Forms.TextBox();
+            this.projectNameLbL = new System.Windows.Forms.Label();
+            this.projectNameTxtBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cancelBtn
@@ -60,22 +62,42 @@
             this.managerIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managerIDLbl.Location = new System.Drawing.Point(25, 67);
             this.managerIDLbl.Name = "managerIDLbl";
-            this.managerIDLbl.Size = new System.Drawing.Size(82, 15);
+            this.managerIDLbl.Size = new System.Drawing.Size(73, 13);
             this.managerIDLbl.TabIndex = 2;
             this.managerIDLbl.Text = "Manager ID";
             // 
             // managerIDTxtbox
             // 
             this.managerIDTxtbox.Location = new System.Drawing.Point(143, 67);
+            this.managerIDTxtbox.MaxLength = 9;
             this.managerIDTxtbox.Name = "managerIDTxtbox";
             this.managerIDTxtbox.Size = new System.Drawing.Size(100, 20);
             this.managerIDTxtbox.TabIndex = 3;
+            // 
+            // projectNameLbL
+            // 
+            this.projectNameLbL.AutoSize = true;
+            this.projectNameLbL.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectNameLbL.Location = new System.Drawing.Point(28, 120);
+            this.projectNameLbL.Name = "projectNameLbL";
+            this.projectNameLbL.Size = new System.Drawing.Size(94, 15);
+            this.projectNameLbL.TabIndex = 4;
+            this.projectNameLbL.Text = "Project Name";
+            // 
+            // projectNameTxtBox
+            // 
+            this.projectNameTxtBox.Location = new System.Drawing.Point(143, 119);
+            this.projectNameTxtBox.Name = "projectNameTxtBox";
+            this.projectNameTxtBox.Size = new System.Drawing.Size(99, 20);
+            this.projectNameTxtBox.TabIndex = 5;
             // 
             // editProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.projectNameTxtBox);
+            this.Controls.Add(this.projectNameLbL);
             this.Controls.Add(this.managerIDTxtbox);
             this.Controls.Add(this.managerIDLbl);
             this.Controls.Add(this.searchBtn);
@@ -93,5 +115,7 @@
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label managerIDLbl;
         private System.Windows.Forms.TextBox managerIDTxtbox;
+        private System.Windows.Forms.Label projectNameLbL;
+        private System.Windows.Forms.TextBox projectNameTxtBox;
     }
 }

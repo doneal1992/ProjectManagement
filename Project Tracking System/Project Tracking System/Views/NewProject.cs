@@ -34,18 +34,28 @@ namespace Project_Tracking_System
                     if (myController.newProject(Int32.Parse(projManagerIDTextbox.Text), projNameTextBox.Text, projDescriptionTxtBox.Text) == true)
                     {
                         MessageBox.Show("Project Saved");
-                        this.Close();
+                        projNameTextBox.ReadOnly = true;
+                        projManagerFNameTextbox.ReadOnly = true;
+                        projManagerLNameTextbox.ReadOnly = true;
+                        projDescriptionTxtBox.ReadOnly = true;
+                        projManagerIDTextbox.ReadOnly = true;
+                        addEmpBtn.Visible = true;
+                        addRequirementsBtn.Visible = true;
+                        addHoursBtn.Visible = true;
+                        addRisksBtn.Visible = true;
+                        
                     }
                     else
                     {
                         MessageBox.Show("A project with that name already exists");
-                        this.Close();
+                        
                     }
                 }
                 else
                 {
                     MessageBox.Show("You must enter at least Project Name, Manager ID, and Description");
                 }
+               
             }
             catch (FormatException idException)
             {
@@ -55,26 +65,54 @@ namespace Project_Tracking_System
 
         private void addEmpBtn_Click(object sender, EventArgs e)
         {
-            Form addEmployee = new employeeInfo();
-            addEmployee.ShowDialog();
+            if (projManagerIDTextbox.Text.Length > 0)
+            {
+                Form addEmployee = new employeeInfo(projManagerIDTextbox.Text);
+                addEmployee.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You must enter the Project and Manager Information first");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form addRequirements = new addRequirement();
-            addRequirements.ShowDialog();
+            if (projManagerIDTextbox.Text.Length > 0)
+            {
+                Form addRequirements = new addRequirement();
+                addRequirements.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You must enter the Project and Manager Information first");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form addRisks = new addRisk();
-            addRisks.ShowDialog();
+            if (projManagerIDTextbox.Text.Length > 0)
+            {
+                Form addRisks = new addRisk(projManagerIDTextbox.Text);
+                addRisks.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You must enter the Project and Manager Information first");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form addHours = new addHours();
-            addHours.ShowDialog();
+            if (projManagerIDTextbox.Text.Length > 0)
+            {
+                Form addHours = new addHours();
+                addHours.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You must enter the Project and Manager Information first");
+            }
         }
 
         

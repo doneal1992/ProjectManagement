@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Tracking_System.Controller;
 
 namespace Project_Tracking_System
 {
     public partial class addHours : Form
     {
+        DatabaseController myController = new DatabaseController();
         public addHours()
         {
             InitializeComponent();
