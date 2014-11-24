@@ -48,9 +48,9 @@
             this.designHoursLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.designHoursLbl.Location = new System.Drawing.Point(39, 36);
             this.designHoursLbl.Name = "designHoursLbl";
-            this.designHoursLbl.Size = new System.Drawing.Size(94, 15);
+            this.designHoursLbl.Size = new System.Drawing.Size(124, 13);
             this.designHoursLbl.TabIndex = 0;
-            this.designHoursLbl.Text = "Design Hours";
+            this.designHoursLbl.Text = "Design Hours (mins.)";
             // 
             // codingHoursLbl
             // 
@@ -58,9 +58,9 @@
             this.codingHoursLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codingHoursLbl.Location = new System.Drawing.Point(39, 87);
             this.codingHoursLbl.Name = "codingHoursLbl";
-            this.codingHoursLbl.Size = new System.Drawing.Size(94, 15);
+            this.codingHoursLbl.Size = new System.Drawing.Size(124, 13);
             this.codingHoursLbl.TabIndex = 1;
-            this.codingHoursLbl.Text = "Coding Hours";
+            this.codingHoursLbl.Text = "Coding Hours (mins.)";
             // 
             // reqAnalysisLbl
             // 
@@ -68,9 +68,9 @@
             this.reqAnalysisLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqAnalysisLbl.Location = new System.Drawing.Point(39, 140);
             this.reqAnalysisLbl.Name = "reqAnalysisLbl";
-            this.reqAnalysisLbl.Size = new System.Drawing.Size(188, 15);
+            this.reqAnalysisLbl.Size = new System.Drawing.Size(206, 13);
             this.reqAnalysisLbl.TabIndex = 2;
-            this.reqAnalysisLbl.Text = "Requirement Analysis Hours";
+            this.reqAnalysisLbl.Text = "Requirement Analysis Hours (mins.)";
             // 
             // testHoursLbl
             // 
@@ -78,9 +78,9 @@
             this.testHoursLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testHoursLbl.Location = new System.Drawing.Point(39, 198);
             this.testHoursLbl.Name = "testHoursLbl";
-            this.testHoursLbl.Size = new System.Drawing.Size(96, 15);
+            this.testHoursLbl.Size = new System.Drawing.Size(127, 13);
             this.testHoursLbl.TabIndex = 3;
-            this.testHoursLbl.Text = "Testing Hours";
+            this.testHoursLbl.Text = "Testing Hours (mins.)";
             // 
             // projManagementLbl
             // 
@@ -88,9 +88,9 @@
             this.projManagementLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projManagementLbl.Location = new System.Drawing.Point(39, 253);
             this.projManagementLbl.Name = "projManagementLbl";
-            this.projManagementLbl.Size = new System.Drawing.Size(182, 15);
+            this.projManagementLbl.Size = new System.Drawing.Size(201, 13);
             this.projManagementLbl.TabIndex = 4;
-            this.projManagementLbl.Text = "Project Management Hours";
+            this.projManagementLbl.Text = "Project Management Hours (mins.)";
             // 
             // designHoursTxtbox
             // 

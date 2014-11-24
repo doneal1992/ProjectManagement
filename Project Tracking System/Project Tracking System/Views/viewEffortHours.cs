@@ -30,7 +30,7 @@ namespace Project_Tracking_System
         private void editBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form addHours = new addHours();
+            Form addHours = new addHours("");
             addHours.ShowDialog();
         }
     }

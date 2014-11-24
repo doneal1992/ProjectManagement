@@ -31,7 +31,7 @@ namespace Project_Tracking_System
                 if (projNameTextBox.Text.Length > 0 && projManagerIDTextbox.Text.Length > 0 && projDescriptionTxtBox.Text.Length > 0)
                 {
 
-                    if (myController.newProject(Int32.Parse(projManagerIDTextbox.Text), projNameTextBox.Text, projDescriptionTxtBox.Text) == true)
+                    if (myController.newProject(Int32.Parse(projManagerIDTextbox.Text), projNameTextBox.Text, projDescriptionTxtBox.Text,projManagerFNameTextbox.Text,projManagerLNameTextbox.Text) == true)
                     {
                         MessageBox.Show("Project Saved");
                         projNameTextBox.ReadOnly = true;
@@ -47,7 +47,7 @@ namespace Project_Tracking_System
                     }
                     else
                     {
-                        MessageBox.Show("A project with that name already exists");
+                        MessageBox.Show("A project with that name already exists or the Manager Id does not match the First Name and Last Name provided");
                         
                     }
                 }
@@ -106,7 +106,7 @@ namespace Project_Tracking_System
         {
             if (projManagerIDTextbox.Text.Length > 0)
             {
-                Form addHours = new addHours();
+                Form addHours = new addHours(projManagerIDTextbox.Text);
                 addHours.ShowDialog();
             }
             else

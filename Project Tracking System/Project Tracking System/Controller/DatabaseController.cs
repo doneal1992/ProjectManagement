@@ -97,7 +97,7 @@ namespace Project_Tracking_System.Controller
         * Postcondition: Project_Tracking_System.DB contains Project(projectID,projectName,projectDescription)
         * @return iff a new Project is added to database, else @return false
         * */
-        public bool newProject(int projectID,string projectName, string projectDescription)
+        public bool newProject(int projectID,string projectName, string projectDescription,string managerFirstName,string managerLastName)
         {
             if(projectID < 0)
             {
@@ -113,7 +113,7 @@ namespace Project_Tracking_System.Controller
             LParam3.Value = projectDescription;
 
             SqlCommand newProject = new SqlCommand("INSERT INTO Project VALUES(@LParam1,@LParam2,@LParam3)", systemConnection);
-            if (doesManagerExist(projectID, LParam1) == true)
+            if (doesManagerIdAndNameMatch(projectID,managerFirstName,managerLastName, LParam1) == true)
             {
                 if (doesProjectExist(projectName, LParam2) != true)
                 {
@@ -294,8 +294,43 @@ namespace Project_Tracking_System.Controller
             }
         }
 
+         private bool doesManagerIdAndNameMatch(int id, string firstName, string lastName, SqlParameter LParam)
+         {
+             LParam = new SqlParameter("@LParam", SqlDbType.BigInt); // Id
+             LParam.Value = id;
+             SqlDataReader myReader;
+             SqlCommand findManagerCommand = new SqlCommand("SELECT * From Project_Manager WHERE id=@LParam", systemConnection);
+             findManagerCommand.Parameters.Add(LParam);
+             String existingId = "";
+             String existingFirstName = "";
+             String existingLastName = "";
+
+             systemConnection.Open();
+             myReader = findManagerCommand.ExecuteReader();
+
+             while (myReader.Read())
+             {
+                 existingId = myReader["id"].ToString();
+                 existingFirstName = myReader["FName"].ToString();
+                 existingLastName = myReader["LName"].ToString();
+
+             }
+             systemConnection.Close();
+             findManagerCommand.Parameters.Remove(LParam);
+             if (existingId == id.ToString() && existingFirstName == firstName && existingLastName == lastName)
+             {
+
+                 return true;
+             }
+             else
+             {
+                 return false;
+             }
+         }
+
         private bool doesManagerExist(int id,SqlParameter LParam)
         {
+            
             LParam = new SqlParameter("@LParam", SqlDbType.BigInt); // Id
              LParam.Value = id;
             SqlDataReader myReader;
