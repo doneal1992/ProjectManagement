@@ -23,7 +23,7 @@ GO
 
 CREATE TABLE Project
 (
-  projectID int,
+  projectID int UNIQUE,
   projectName varchar(30),
   description varchar(2000),
 

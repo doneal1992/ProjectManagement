@@ -47,7 +47,7 @@ namespace Project_Tracking_System
                     }
                     else
                     {
-                        MessageBox.Show("A project with that name already exists or the Manager Id does not match the First Name and Last Name provided");
+                        MessageBox.Show("A project with that Name and ID already exists or the Manager Id does not match the First Name and Last Name provided");
                         
                     }
                 }

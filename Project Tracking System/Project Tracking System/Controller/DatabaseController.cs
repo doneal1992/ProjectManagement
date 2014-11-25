@@ -103,6 +103,7 @@ namespace Project_Tracking_System.Controller
             {
                 throw new ArgumentException("The Project ID must be greater than or equal to zero");
             }
+            
 
             SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//id
             SqlParameter LParam2 = new SqlParameter("@LParam2", SqlDbType.VarChar,30);//name
@@ -115,7 +116,7 @@ namespace Project_Tracking_System.Controller
             SqlCommand newProject = new SqlCommand("INSERT INTO Project VALUES(@LParam1,@LParam2,@LParam3)", systemConnection);
             if (doesManagerIdAndNameMatch(projectID,managerFirstName,managerLastName, LParam1) == true)
             {
-                if (doesProjectExist(projectName, LParam2) != true)
+                if (doesProjectExist(projectName,projectID,LParam2,LParam1) != true)
                 {
                     systemConnection.Open();
                     newProject.Parameters.Add(LParam1);
@@ -207,24 +208,40 @@ namespace Project_Tracking_System.Controller
 
 
         /**                                          Private Methods                            **/
-        private bool doesProjectExist(string projectName, SqlParameter LParam)
+        private bool doesProjectExist(string projectName,int id,SqlParameter LParam, SqlParameter LParam2)
         {
-            LParam = new SqlParameter("@LParam", SqlDbType.VarChar,30); 
+            LParam = new SqlParameter("@LParam", SqlDbType.VarChar,30);
+            LParam2 = new SqlParameter("@LParam2", SqlDbType.BigInt);
+            LParam2.Value = id;
             LParam.Value = projectName;
             SqlDataReader myReader;
-            SqlCommand findProjectCommand = new SqlCommand("SELECT projectName From Project WHERE projectName=@LParam", systemConnection);
+            SqlCommand findProjectCommand = new SqlCommand("SELECT * From Project WHERE projectName=@LParam", systemConnection);
+            SqlCommand findProjectWithIDCommand = new SqlCommand("SELECT projectID From Project WHERE projectID = @LParam2", systemConnection);
             findProjectCommand.Parameters.Add(LParam);
+            findProjectWithIDCommand.Parameters.Add(LParam2);
             String existingProject = "";
+            String existingProjectID = "";
             systemConnection.Open();
             myReader = findProjectCommand.ExecuteReader();
 
             while (myReader.Read())
             {
                 existingProject = myReader["projectName"].ToString();
+            
             }
             systemConnection.Close();
             findProjectCommand.Parameters.Remove(LParam);
-            if (existingProject == projectName)
+            systemConnection.Open();
+            myReader = findProjectWithIDCommand.ExecuteReader();
+
+            while (myReader.Read())
+            {
+                existingProjectID = myReader["projectID"].ToString();
+
+            }
+            systemConnection.Close();
+            findProjectWithIDCommand.Parameters.Remove(LParam2);
+            if (existingProject == projectName || existingProjectID == id.ToString())
             {
 
                 return true;
