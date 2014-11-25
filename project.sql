@@ -1,3 +1,10 @@
+USE master
+GO
+
+IF EXISTS(select * from sys.databases where name='Project_Tracking_System')
+DROP DATABASE Project_Tracking_System
+GO
+
 CREATE DATABASE Project_Tracking_System
 GO
 
@@ -19,7 +26,8 @@ CREATE TABLE Project
   projectID int,
   projectName varchar(30),
   description varchar(2000),
-  PRIMARY KEY(projectID),
+
+  PRIMARY KEY(projectID,projectName),
   FOREIGN KEY(projectID) REFERENCES Project_Manager(id)
  
 )
