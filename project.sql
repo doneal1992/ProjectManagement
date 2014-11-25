@@ -1,10 +1,3 @@
-USE master
-GO
-
-IF EXISTS(SELECT name FROM sys.databases WHERE name= 'Project_Tracking_System')
-	DROP DATABASE Project_Tracking_System
-GO
-
 CREATE DATABASE Project_Tracking_System
 GO
 
@@ -26,7 +19,7 @@ CREATE TABLE Project
   projectID int,
   projectName varchar(30),
   description varchar(2000),
-  PRIMARY KEY(projectName),
+  PRIMARY KEY(projectID),
   FOREIGN KEY(projectID) REFERENCES Project_Manager(id)
  
 )
@@ -72,6 +65,14 @@ CREATE TABLE Effort
 )
 GO
 
+CREATE TABLE Archived_Projects
+(
+   projectID int,
+   projectName varchar(25),
+   projectDescription varchar(5000),
+)
+GO
+
 INSERT INTO Project_Manager VALUES(02123,'Danny','ONeal');
 INSERT INTO Project_Manager VALUES(02124,'Seth', 'Wilhoite');
 INSERT INTO Project VALUES(02124,'Project Tracking System','Project about games');
@@ -81,3 +82,4 @@ INSERT INTO Employee VALUES(02124,'John','Brown','Designer');
 INSERT INTO Requirements VALUES(02123,'Functional','Product shall allow user to see expended hours');
 INSERT INTO Risks VALUES(02123,'Hours could be incorrect due to experiences','In progress');
 INSERT INTO Effort VALUES(02123,45,34,54,34,54);
+
