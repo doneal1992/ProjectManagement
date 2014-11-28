@@ -26,7 +26,7 @@ namespace Project_Tracking_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            addRequirement newReq = new addRequirement();
+            addRequirement newReq = new addRequirement("");
             newReq.Show();
         }
     }

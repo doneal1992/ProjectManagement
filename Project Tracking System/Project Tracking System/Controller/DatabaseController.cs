@@ -11,6 +11,7 @@ namespace Project_Tracking_System.Controller
 
     class DatabaseController
     {
+        
 
        protected static SqlConnection systemConnection = new SqlConnection("server=" + System.Environment.MachineName.ToString() +
                "\\SQLEXPRESS;" + "Trusted_Connection = yes;" + "database = Project_Tracking_System;" + "connection timeout = 10;" +
@@ -138,6 +139,31 @@ namespace Project_Tracking_System.Controller
 
         }
 
+        public bool addNewRequirement(int requirementID, string type, string description)
+        {
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//requirement id
+            SqlParameter LParam2 = new SqlParameter("@LParam2", SqlDbType.VarChar, 20);//type
+            SqlParameter LParam3 = new SqlParameter("@LParam3", SqlDbType.VarChar, 500);//description
+
+            SqlCommand insertNewRequirement = new SqlCommand("INSERT INTO Requirements Values(@LParam1,@LParam2,@LParam3)", systemConnection);
+            LParam1.Value = requirementID;
+            LParam2.Value = type;
+            LParam3.Value = description;
+            if(doesRequirementExist(description,requirementID,LParam1) != true)
+            {
+                systemConnection.Open();
+                insertNewRequirement.Parameters.Add(LParam1);
+                insertNewRequirement.Parameters.Add(LParam2);
+                insertNewRequirement.Parameters.Add(LParam3);
+                insertNewRequirement.ExecuteNonQuery();
+                systemConnection.Close();
+                return true;
+            }
+            else{
+                 return false;
+            }
+        }
+
         public bool addNewHours(int effortProjID, int designHours, int codeHours, int reqAnalysisHours, int testingHours, int projManagaementHours)
         {
             SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//Project ID link
@@ -207,7 +233,7 @@ namespace Project_Tracking_System.Controller
 
 
 
-        /**                                          Private Methods                            **/
+        /*********************************Private Methods****************************************/
         private bool doesProjectExist(string projectName,int id,SqlParameter LParam, SqlParameter LParam2)
         {
             LParam = new SqlParameter("@LParam", SqlDbType.VarChar,30);
@@ -215,7 +241,7 @@ namespace Project_Tracking_System.Controller
             LParam2.Value = id;
             LParam.Value = projectName;
             SqlDataReader myReader;
-            SqlCommand findProjectCommand = new SqlCommand("SELECT * From Project WHERE projectName=@LParam", systemConnection);
+            SqlCommand findProjectCommand = new SqlCommand("SELECT projectName From Project WHERE projectName=@LParam", systemConnection);
             SqlCommand findProjectWithIDCommand = new SqlCommand("SELECT projectID From Project WHERE projectID = @LParam2", systemConnection);
             findProjectCommand.Parameters.Add(LParam);
             findProjectWithIDCommand.Parameters.Add(LParam2);
@@ -252,6 +278,8 @@ namespace Project_Tracking_System.Controller
             }
         }
 
+        
+
         private bool doesEffortExist(int effortId, SqlParameter LParam)
         {
             LParam = new SqlParameter("@LParam", SqlDbType.BigInt); // Id
@@ -280,6 +308,33 @@ namespace Project_Tracking_System.Controller
             }
         }
 
+        private bool doesRequirementExist(string description,int requirementID, SqlParameter LParam)
+        {
+            LParam = new SqlParameter("@LParam", SqlDbType.BigInt);
+            LParam.Value = requirementID;
+            SqlCommand findRequirementCommand = new SqlCommand("SELECT description From Requirements WHERE requirementID=@LParam", systemConnection);
+            SqlDataReader myReader;
+            findRequirementCommand.Parameters.Add(LParam);
+            String existingRequirement = "";
+            String newRequirementLowerCase = description.ToLower();
+            systemConnection.Open();
+            myReader = findRequirementCommand.ExecuteReader();
+            while (myReader.Read())
+            {
+                existingRequirement = myReader["description"].ToString();
+            }
+            systemConnection.Close();
+            findRequirementCommand.Parameters.Remove(LParam);
+            if (existingRequirement == description || existingRequirement == newRequirementLowerCase)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
          private bool doesRiskExist(string riskDescription,int riskId, SqlParameter LParam)
         {
@@ -289,6 +344,7 @@ namespace Project_Tracking_System.Controller
             SqlCommand findManagerCommand = new SqlCommand("SELECT description From Risks WHERE risksID=@LParam", systemConnection);
             findManagerCommand.Parameters.Add(LParam);
             String existingRisk = "";
+            String newRiskLowerCase = riskDescription.ToLower();
             systemConnection.Open();
             myReader = findManagerCommand.ExecuteReader();
             
@@ -300,7 +356,7 @@ namespace Project_Tracking_System.Controller
             systemConnection.Close();
            
             findManagerCommand.Parameters.Remove(LParam);
-            if (existingRisk == riskDescription)
+            if (existingRisk == riskDescription || existingRisk == newRiskLowerCase)
             {
 
                 return true;

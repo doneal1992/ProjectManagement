@@ -38,15 +38,17 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(378, 45);
+            this.titleLabel.Location = new System.Drawing.Point(504, 55);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(179, 15);
+            this.titleLabel.Size = new System.Drawing.Size(211, 17);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Project Tracking System Ver 1.1";
             // 
@@ -54,9 +56,10 @@
             // 
             this.newProjectBtn.AutoSize = true;
             this.newProjectBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.newProjectBtn.Location = new System.Drawing.Point(430, 136);
+            this.newProjectBtn.Location = new System.Drawing.Point(573, 167);
+            this.newProjectBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newProjectBtn.Name = "newProjectBtn";
-            this.newProjectBtn.Size = new System.Drawing.Size(83, 25);
+            this.newProjectBtn.Size = new System.Drawing.Size(93, 27);
             this.newProjectBtn.TabIndex = 1;
             this.newProjectBtn.Text = "New Project";
             this.newProjectBtn.UseVisualStyleBackColor = true;
@@ -66,9 +69,10 @@
             // 
             this.editProjectBtn.AutoSize = true;
             this.editProjectBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editProjectBtn.Location = new System.Drawing.Point(430, 222);
+            this.editProjectBtn.Location = new System.Drawing.Point(573, 273);
+            this.editProjectBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editProjectBtn.Name = "editProjectBtn";
-            this.editProjectBtn.Size = new System.Drawing.Size(79, 25);
+            this.editProjectBtn.Size = new System.Drawing.Size(90, 27);
             this.editProjectBtn.TabIndex = 2;
             this.editProjectBtn.Text = "Edit Project";
             this.editProjectBtn.UseVisualStyleBackColor = true;
@@ -83,7 +87,8 @@
             this.managersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1041, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1388, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -134,16 +139,27 @@
             this.addManagerToolStripMenuItem.Text = "Add Manager";
             this.addManagerToolStripMenuItem.Click += new System.EventHandler(this.addManagerToolStripMenuItem_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(553, 372);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 27);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Close Project";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // mainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 400);
+            this.ClientSize = new System.Drawing.Size(1388, 492);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.editProjectBtn);
             this.Controls.Add(this.newProjectBtn);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "mainMenu";
             this.Text = "Main Menu";
             this.menuStrip1.ResumeLayout(false);
@@ -165,6 +181,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addManagerToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -80,7 +80,7 @@ namespace Project_Tracking_System
         {
             if (projManagerIDTextbox.Text.Length > 0)
             {
-                Form addRequirements = new addRequirement();
+                Form addRequirements = new addRequirement(projManagerIDTextbox.Text);
                 addRequirements.ShowDialog();
             }
             else
