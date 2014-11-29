@@ -229,11 +229,29 @@ namespace Project_Tracking_System.Controller
             }
         }
 
+        public string getProjectNameByProjetID(int projectID)
+        {
+            string projectName = "";
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);
+            SqlCommand getProjectName = new SqlCommand("Select projectName FROM Project WHERE projectID = @LParam1", systemConnection);
+            SqlDataReader myReader;
+            myReader = getProjectName.ExecuteReader();
+            LParam1.Value = projectID;
+            systemConnection.Open();
+            getProjectName.Parameters.Add(LParam1);
+            while (myReader.Read())
+            {
+                projectName = myReader["projectName"].ToString();
+            }
+            return projectName;
+        }
 
 
 
 
         /*********************************Private Methods****************************************/
+        
+
         private bool doesProjectExist(string projectName,int id,SqlParameter LParam, SqlParameter LParam2)
         {
             LParam = new SqlParameter("@LParam", SqlDbType.VarChar,30);
