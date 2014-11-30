@@ -47,5 +47,11 @@ namespace Project_Tracking_System
             Form addManager = new addManager();
             addManager.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form finalizeProject = new FinalizeProject();
+            finalizeProject.ShowDialog();
+        }
     }
 }

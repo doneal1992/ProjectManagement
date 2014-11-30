@@ -40,9 +40,10 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(72, 196);
+            this.saveBtn.Location = new System.Drawing.Point(96, 241);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(100, 28);
             this.saveBtn.TabIndex = 0;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(228, 196);
+            this.cancelBtn.Location = new System.Drawing.Point(304, 241);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(100, 28);
             this.cancelBtn.TabIndex = 1;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -61,56 +63,62 @@
             // fnamelbl
             // 
             this.fnamelbl.AutoSize = true;
-            this.fnamelbl.Location = new System.Drawing.Point(69, 48);
+            this.fnamelbl.Location = new System.Drawing.Point(92, 59);
+            this.fnamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fnamelbl.Name = "fnamelbl";
-            this.fnamelbl.Size = new System.Drawing.Size(67, 15);
+            this.fnamelbl.Size = new System.Drawing.Size(76, 17);
             this.fnamelbl.TabIndex = 2;
             this.fnamelbl.Text = "First Name";
             // 
             // lnamelbl
             // 
             this.lnamelbl.AutoSize = true;
-            this.lnamelbl.Location = new System.Drawing.Point(69, 95);
+            this.lnamelbl.Location = new System.Drawing.Point(92, 117);
+            this.lnamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnamelbl.Name = "lnamelbl";
-            this.lnamelbl.Size = new System.Drawing.Size(67, 15);
+            this.lnamelbl.Size = new System.Drawing.Size(76, 17);
             this.lnamelbl.TabIndex = 3;
             this.lnamelbl.Text = "Last Name";
             // 
             // idLbl
             // 
             this.idLbl.AutoSize = true;
-            this.idLbl.Location = new System.Drawing.Point(69, 139);
+            this.idLbl.Location = new System.Drawing.Point(92, 171);
+            this.idLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idLbl.Name = "idLbl";
-            this.idLbl.Size = new System.Drawing.Size(17, 15);
+            this.idLbl.Size = new System.Drawing.Size(19, 17);
             this.idLbl.TabIndex = 4;
             this.idLbl.Text = "Id";
             // 
             // fNameTxtBox
             // 
-            this.fNameTxtBox.Location = new System.Drawing.Point(203, 48);
+            this.fNameTxtBox.Location = new System.Drawing.Point(271, 59);
+            this.fNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fNameTxtBox.Name = "fNameTxtBox";
-            this.fNameTxtBox.Size = new System.Drawing.Size(100, 20);
+            this.fNameTxtBox.Size = new System.Drawing.Size(132, 22);
             this.fNameTxtBox.TabIndex = 5;
             // 
             // lNameTextBox
             // 
-            this.lNameTextBox.Location = new System.Drawing.Point(203, 95);
+            this.lNameTextBox.Location = new System.Drawing.Point(271, 117);
+            this.lNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lNameTextBox.Name = "lNameTextBox";
-            this.lNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lNameTextBox.Size = new System.Drawing.Size(132, 22);
             this.lNameTextBox.TabIndex = 6;
             // 
             // idNumberTxtBox
             // 
-            this.idNumberTxtBox.Location = new System.Drawing.Point(203, 139);
+            this.idNumberTxtBox.Location = new System.Drawing.Point(271, 171);
+            this.idNumberTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.idNumberTxtBox.Name = "idNumberTxtBox";
-            this.idNumberTxtBox.Size = new System.Drawing.Size(100, 20);
+            this.idNumberTxtBox.Size = new System.Drawing.Size(132, 22);
             this.idNumberTxtBox.TabIndex = 7;
             // 
             // addManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 253);
+            this.ClientSize = new System.Drawing.Size(491, 311);
             this.Controls.Add(this.idNumberTxtBox);
             this.Controls.Add(this.lNameTextBox);
             this.Controls.Add(this.fNameTxtBox);
@@ -119,6 +127,8 @@
             this.Controls.Add(this.fnamelbl);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(509, 358);
             this.Name = "addManager";
             this.Text = "New Manager";
             this.ResumeLayout(false);

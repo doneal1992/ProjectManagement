@@ -40,9 +40,10 @@
             // 
             this.statusLbl.AutoSize = true;
             this.statusLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLbl.Location = new System.Drawing.Point(32, 45);
+            this.statusLbl.Location = new System.Drawing.Point(43, 55);
+            this.statusLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(47, 15);
+            this.statusLbl.Size = new System.Drawing.Size(43, 13);
             this.statusLbl.TabIndex = 0;
             this.statusLbl.Text = "Status";
             // 
@@ -50,32 +51,38 @@
             // 
             this.descriptionLbl.AutoSize = true;
             this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLbl.Location = new System.Drawing.Point(32, 125);
+            this.descriptionLbl.Location = new System.Drawing.Point(43, 154);
+            this.descriptionLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(80, 15);
+            this.descriptionLbl.Size = new System.Drawing.Size(71, 13);
             this.descriptionLbl.TabIndex = 1;
             this.descriptionLbl.Text = "Description";
             // 
             // statusTxtbox
             // 
-            this.statusTxtbox.Location = new System.Drawing.Point(146, 45);
+            this.statusTxtbox.Location = new System.Drawing.Point(195, 55);
+            this.statusTxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusTxtbox.Name = "statusTxtbox";
-            this.statusTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.statusTxtbox.Size = new System.Drawing.Size(132, 22);
             this.statusTxtbox.TabIndex = 2;
             // 
             // descriptionTxtbox
             // 
-            this.descriptionTxtbox.Location = new System.Drawing.Point(146, 125);
+            this.descriptionTxtbox.Location = new System.Drawing.Point(195, 154);
+            this.descriptionTxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.descriptionTxtbox.Name = "descriptionTxtbox";
-            this.descriptionTxtbox.Size = new System.Drawing.Size(191, 66);
+            this.descriptionTxtbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.descriptionTxtbox.Size = new System.Drawing.Size(254, 80);
             this.descriptionTxtbox.TabIndex = 3;
             this.descriptionTxtbox.Text = "";
+            this.descriptionTxtbox.WordWrap = false;
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(93, 218);
+            this.saveBtn.Location = new System.Drawing.Point(124, 268);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(100, 28);
             this.saveBtn.TabIndex = 4;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -83,9 +90,10 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(262, 218);
+            this.cancelBtn.Location = new System.Drawing.Point(349, 268);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(100, 28);
             this.cancelBtn.TabIndex = 5;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -93,15 +101,17 @@
             // 
             // addRisk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 253);
+            this.ClientSize = new System.Drawing.Size(560, 311);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.descriptionTxtbox);
             this.Controls.Add(this.statusTxtbox);
             this.Controls.Add(this.descriptionLbl);
             this.Controls.Add(this.statusLbl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(578, 358);
             this.Name = "addRisk";
             this.Text = "addRisk";
             this.ResumeLayout(false);

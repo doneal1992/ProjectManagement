@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_Tracking_System.Controller;
 
 namespace Project_Tracking_System
 {
-    public partial class addBtn : Form
+    public partial class viewRequirements : Form
     {
-        public addBtn()
+        private int projectID;
+        private DatabaseController myController;
+
+        public viewRequirements(int projectID)
         {
             InitializeComponent();
+            this.projectID = projectID;
+            this.myController = new DatabaseController();
+            this.richTextBox1.Text = this.richTextBox1.Text + Environment.NewLine + this.myController.getProjectRequirementsByProjectID(this.projectID);
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -26,7 +33,7 @@ namespace Project_Tracking_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            addRequirement newReq = new addRequirement("");
+            addRequirement newReq = new addRequirement(this.projectID.ToString());
             newReq.Show();
         }
     }

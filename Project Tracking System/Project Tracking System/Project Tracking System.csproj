@@ -51,11 +51,11 @@
     <Compile Include="Views\addManager.Designer.cs">
       <DependentUpon>addManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CloseProject.cs">
+    <Compile Include="Views\FinalizeProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CloseProject.Designer.cs">
-      <DependentUpon>CloseProject.cs</DependentUpon>
+    <Compile Include="Views\FinalizeProject.Designer.cs">
+      <DependentUpon>FinalizeProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\viewEffortHours.cs">
       <SubType>Form</SubType>
@@ -93,11 +93,11 @@
     <Compile Include="Views\editEmployees.Designer.cs">
       <DependentUpon>editEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\editProject.cs">
+    <Compile Include="Views\projectSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\editProject.Designer.cs">
-      <DependentUpon>editProject.cs</DependentUpon>
+    <Compile Include="Views\projectSearch.Designer.cs">
+      <DependentUpon>projectSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainMenu.cs">
       <SubType>Form</SubType>
@@ -119,11 +119,17 @@
       <DependentUpon>projectEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\viewRisksRequirements.cs">
+    <Compile Include="Views\viewRequirements.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\viewRisksRequirements.Designer.cs">
-      <DependentUpon>viewRisksRequirements.cs</DependentUpon>
+    <Compile Include="Views\viewRequirements.Designer.cs">
+      <DependentUpon>viewRequirements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\viewRisks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\viewRisks.Designer.cs">
+      <DependentUpon>viewRisks.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\addEmployee.resx">
       <DependentUpon>employeeInfo.cs</DependentUpon>
@@ -140,8 +146,11 @@
     <EmbeddedResource Include="Views\addRisk.resx">
       <DependentUpon>addRisk.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CloseProject.resx">
-      <DependentUpon>CloseProject.cs</DependentUpon>
+    <EmbeddedResource Include="Views\employeeInfo.resx">
+      <DependentUpon>employeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FinalizeProject.resx">
+      <DependentUpon>FinalizeProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\viewEffortHours.resx">
       <DependentUpon>viewEffortHours.cs</DependentUpon>
@@ -149,8 +158,8 @@
     <EmbeddedResource Include="Views\editEmployees.resx">
       <DependentUpon>editEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\editProject.resx">
-      <DependentUpon>editProject.cs</DependentUpon>
+    <EmbeddedResource Include="Views\projectSearch.resx">
+      <DependentUpon>projectSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -170,8 +179,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\viewRisksRequirements.resx">
-      <DependentUpon>viewRisksRequirements.cs</DependentUpon>
+    <EmbeddedResource Include="Views\viewRequirements.resx">
+      <DependentUpon>viewRequirements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\viewRisks.resx">
+      <DependentUpon>viewRisks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -34,7 +34,8 @@ C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Trackin
 C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.NewProject.resources
 C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.projectEdit.resources
 C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.Properties.Resources.resources
-C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.addBtn.resources
 C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project Tracking System.csproj.GenerateResource.Cache
 C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.Views.addManager.resources
-C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.Views.CloseProject.resources
+C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.Views.viewRisks.resources
+C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.viewRequirements.resources
+C:\Users\Danny\Desktop\ProjectManagement\Project Tracking System\Project Tracking System\obj\Debug\Project_Tracking_System.Views.FinalizeProject.resources

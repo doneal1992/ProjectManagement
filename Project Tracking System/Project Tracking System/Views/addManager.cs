@@ -32,12 +32,12 @@ namespace Project_Tracking_System.Views
                     int idNumber = Int32.Parse(idNumberTxtBox.Text);
                     if (myController.addNewManager(fNameTxtBox.Text, lNameTextBox.Text, idNumber) == true)
                     {
-                        MessageBox.Show(fNameTxtBox.Text + " has been added");
+                        MessageBox.Show(fNameTxtBox.Text + " has been added, with the ID " + this.idNumberTxtBox.Text);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show(fNameTxtBox.Text + " already exists");
+                        MessageBox.Show("A Manager with that ID already exists, please use another ID");
                     }
                 }
                 else

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Project_Tracking_System.Controller
 {
@@ -13,9 +13,7 @@ namespace Project_Tracking_System.Controller
     {
         
 
-       protected static SqlConnection systemConnection = new SqlConnection("server=" + System.Environment.MachineName.ToString() +
-               "\\SQLEXPRESS;" + "Trusted_Connection = yes;" + "database = Project_Tracking_System;" + "connection timeout = 10;" +
-               "net=dbmslpcn");
+       protected static SqlConnection systemConnection = new SqlConnection("Data Source="+Environment.MachineName+"\\SQLExpress;Initial Catalog=Project_Tracking_System;Integrated Security=True");
         /**
          * Returns true iff a new employee has been added to the database, else returns false
          * 
@@ -38,20 +36,17 @@ namespace Project_Tracking_System.Controller
             LParam3.Value = LName;
             LParam4.Value = position;
 
-            if (doesEmployeeExist(currProjectID, LParam1) != true)
-            {
+            
                 systemConnection.Open();
                 insertNewEmployee.Parameters.Add(LParam1);
                 insertNewEmployee.Parameters.Add(LParam2);
                 insertNewEmployee.Parameters.Add(LParam3);
                 insertNewEmployee.Parameters.Add(LParam4);
+                insertNewEmployee.ExecuteNonQuery();
                 systemConnection.Close();
                 return true;
-            }
-            else
-            {
-                return false;
-            }
+            
+           
 
         }
 
@@ -139,6 +134,11 @@ namespace Project_Tracking_System.Controller
 
         }
 
+        /**
+         * Adds new requirement to database linked to projectID
+         * Precondition: none
+         * Postcondition: riskID ->| requirementID
+         * */
         public bool addNewRequirement(int requirementID, string type, string description)
         {
             SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//requirement id
@@ -164,6 +164,11 @@ namespace Project_Tracking_System.Controller
             }
         }
 
+        /**
+         * Adds Effort Hours to project linked to projectID
+         * Preconditoin: none
+         * Postcondition: none
+         * */
         public bool addNewHours(int effortProjID, int designHours, int codeHours, int reqAnalysisHours, int testingHours, int projManagaementHours)
         {
             SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//Project ID link
@@ -202,7 +207,11 @@ namespace Project_Tracking_System.Controller
             
         }
 
-
+        /**
+         * Adds new Risk to database with link to projectID
+         * Precondition: none
+         * Postconditon: none
+         * */
         public bool addNewRisk(int riskID, string riskDescription, string riskStatus)
         {
             SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt); // Risk ID
@@ -229,27 +238,316 @@ namespace Project_Tracking_System.Controller
             }
         }
 
+        /**
+         * Returns Project Name of project based on give projectID
+         * Preconditon: none
+         * Postconditoin: none
+         * @Return:  Project Name of projectID
+         * */
         public string getProjectNameByProjetID(int projectID)
         {
             string projectName = "";
             SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);
             SqlCommand getProjectName = new SqlCommand("Select projectName FROM Project WHERE projectID = @LParam1", systemConnection);
             SqlDataReader myReader;
-            myReader = getProjectName.ExecuteReader();
+           
             LParam1.Value = projectID;
             systemConnection.Open();
             getProjectName.Parameters.Add(LParam1);
+            myReader = getProjectName.ExecuteReader();
             while (myReader.Read())
             {
                 projectName = myReader["projectName"].ToString();
             }
+            systemConnection.Close();
             return projectName;
         }
 
+        /**
+         * Returns string of project requirements based on the given projectID
+         * Precondition: none
+         * PostCondition:none
+         * @Return: String of project requirements
+         * */
+        public string getProjectRequirementsByProjectID(int projectID)
+        {
+            string requirementType = "";
+            string requirementDescription = "";
+            string currentRequirement = "";
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);
+            SqlCommand getProjctRequirements = new SqlCommand("SELECT type,description FROM Requirements WHERE requirementID = @LParam1", systemConnection);
+            SqlDataReader myReader;
+            LParam1.Value = projectID;
+            systemConnection.Open();
+            getProjctRequirements.Parameters.Add(LParam1);
+            myReader = getProjctRequirements.ExecuteReader();
+            while (myReader.Read())
+            {
+                requirementType = myReader["type"].ToString();
+                requirementDescription = myReader["description"].ToString();
+                requirementType = requirementType.PadRight(35 - requirementType.Length);
+                currentRequirement = currentRequirement + string.Format("{0}{1}", requirementType, requirementDescription) + Environment.NewLine;
+            }
+            systemConnection.Close();
+            getProjctRequirements.Parameters.Remove(LParam1);
+            return currentRequirement;
+        }
+
+        /**Returns a string of project Risks based on the given projectID
+         * Precondition: none
+         * Postcondition: none
+         * @Return: string of project Risks
+         * */
+        public string getProjectRisksByProjectID(int projectID)
+        {
+            string riskDescription = "";
+            string riskStatus = "";
+            string currentRisk = "";
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);
+            SqlCommand getProjctRequirements = new SqlCommand("SELECT riskStatus,description FROM Risks WHERE risksID = @LParam1", systemConnection);
+            SqlDataReader myReader;
+            LParam1.Value = projectID;
+            systemConnection.Open();
+            getProjctRequirements.Parameters.Add(LParam1);
+            myReader = getProjctRequirements.ExecuteReader();
+            while (myReader.Read())
+            {
+                riskDescription = myReader["description"].ToString();
+                riskStatus = myReader["riskStatus"].ToString();
+                riskStatus = riskStatus.PadRight(35 - riskStatus.Length);
+                currentRisk = currentRisk + string.Format("{0}{1}", riskStatus, riskDescription) + Environment.NewLine;
+            }
+            systemConnection.Close();
+            getProjctRequirements.Parameters.Remove(LParam1);
+            return Environment.NewLine + currentRisk;
+        }
+
+
+        /**
+         * Returns string array of effort hours linked to projectID in database
+         * Precondition: none
+         * Postcondition: none
+         * @Return: string array of effort hours
+         * */
+        public string[] getEfforHoursByProjectID(int projectID)
+        {
+            string[] efforHourArray = new string[5];
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);
+            SqlCommand getEffortHours = new SqlCommand("SELECT * FROM Effort WHERE effortProjID = @LParam1", systemConnection);
+            SqlDataReader myReader;
+            LParam1.Value = projectID;
+            getEffortHours.Parameters.Add(LParam1);
+            systemConnection.Open();
+            myReader = getEffortHours.ExecuteReader();
+            while (myReader.Read())
+            {
+                efforHourArray[0] = myReader["designHours"].ToString();
+                efforHourArray[1] = myReader["codeHours"].ToString();
+                efforHourArray[2] = myReader["reqAnalysis"].ToString();
+                efforHourArray[3] = myReader["testingHours"].ToString();
+                efforHourArray[4] = myReader["projManagementHours"].ToString();
+            }
+            myReader.Close();
+            getEffortHours.Parameters.Remove(LParam1);
+            systemConnection.Close();
+           
+            return efforHourArray;
+        }
+
+        /**
+         * Updates the effort hours linked to the projectID in the database
+         * Precondition: none
+         * PostCondition: Effort Hours linked to projectID are changed
+         **/
+        public void updateEfforHoursByProjectId(int projectID, int designHours, int codingHours, int reqAnalysisHours, int testingHours, int projManagementHours)
+        {
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//projectID;
+            SqlParameter LParam2 = new SqlParameter("@LParam2", SqlDbType.BigInt);//designHours;
+            SqlParameter LParam3 = new SqlParameter("@LParam3", SqlDbType.BigInt);//codingHours;
+            SqlParameter LParam4 = new SqlParameter("@LParam4", SqlDbType.BigInt);//requirement Analysis hours;
+            SqlParameter LParam5 = new SqlParameter("@LParam5", SqlDbType.BigInt);//testing hours;
+            SqlParameter LParam6 = new SqlParameter("@LParam6", SqlDbType.BigInt);//project Management hours;
+            SqlCommand updateEfforHours = new SqlCommand("UPDATE Effort SET designHours = @LParam2,codeHours=@LParam3,reqAnalysis=@LParam4,testingHours=@LParam5,projManagementHours=@LParam6 WHERE effortProjID = @LParam1", systemConnection);
+            LParam1.Value = projectID;
+            LParam2.Value = designHours;
+            LParam3.Value = codingHours;
+            LParam4.Value = reqAnalysisHours;
+            LParam5.Value = testingHours;
+            LParam6.Value = projManagementHours;
+
+            executeUpdateEffortHours(LParam1, LParam2, LParam3, LParam4, LParam5, LParam6, updateEfforHours);
+
+
+
+        }
+
+
+        /**
+         * Returns a string of all employees linked to the projectID
+         * Precondition: none;
+         * Postcondition: non
+         * @return: A string of all employees linked to the projectID in the database
+         **/
+        public string getProjectEmployeesByProjectID(int projectID)
+        {
+       
+            string projectEmployeeFName = "";
+            string projectEmployeeLName = "";
+            string projectEmployeePosition = "";
+            string currentInfo = "";
+          
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);
+            SqlCommand getProjectEmployees = new SqlCommand("SELECT Fname,Lname,position FROM Employee WHERE currProjID = @LParam1", systemConnection);
+            SqlDataReader myReader;
+           
+            LParam1.Value = projectID;
+            return executeGetEmployees(ref projectEmployeeFName, ref projectEmployeeLName, ref projectEmployeePosition, ref currentInfo, LParam1, getProjectEmployees, out myReader);
+        }
+
+       
+
+        /**
+         * Moves the project with the specified id from the Project Table to the Archived_Projects Table, also removes all references to requirements,effort,risks,and employees
+         * Precondition: none;
+         * PostCondition: none;
+         * */
+        public void finalizeProjectAndRemoveComponents(int projectID)
+        {
+            SqlParameter LParam1 = new SqlParameter("@LParam1", SqlDbType.BigInt);//project id
+            SqlCommand moveToArchiveTable = new SqlCommand("INSERT INTO Archived_Projects SELECT * FROM Project WHERE projectID = @LParam1", systemConnection);
+            SqlCommand removeRequirements = new SqlCommand("DELETE FROM Requirements WHERE requirementID = @LParam1", systemConnection);
+            SqlCommand removeEmployees = new SqlCommand("DELETE FROM Employee WHERE currProjID = @LParam1", systemConnection);
+            SqlCommand removeEffortHours = new SqlCommand("DELETE FROM Effort WHERE effortProjID = @LParam1", systemConnection);
+            SqlCommand removeRisks = new SqlCommand("DELETE FROM Risks WHERE risksID = @LParam1", systemConnection);
+            SqlCommand removeProject = new SqlCommand("DELETE FROM Project WHERE projectID = @LParam1", systemConnection);
+            LParam1.Value = projectID;
+            executeProjectFinalize(LParam1, moveToArchiveTable, removeRequirements, removeEmployees, removeEffortHours, removeRisks, removeProject);
+        }
+
+      
 
 
 
         /*********************************Private Methods****************************************/
+        // Reads employees from Database and returns them as a string
+        private static string executeGetEmployees(ref string projectEmployeeFName, ref string projectEmployeeLName, ref string projectEmployeePosition, ref string currentInfo, SqlParameter LParam1, SqlCommand getProjectEmployees, out SqlDataReader myReader)
+        {
+            systemConnection.Open();
+            getProjectEmployees.Parameters.Add(LParam1);
+            myReader = readEmployees(ref projectEmployeeFName, ref projectEmployeeLName, ref projectEmployeePosition, ref currentInfo, getProjectEmployees);
+            getProjectEmployees.Parameters.Remove(LParam1);
+            systemConnection.Close();
+
+
+            return Environment.NewLine + currentInfo;
+        }
+
+        //Reads employee table
+        private static SqlDataReader readEmployees(ref string projectEmployeeFName, ref string projectEmployeeLName, ref string projectEmployeePosition, ref string currentInfo, SqlCommand getProjectEmployees)
+        {
+            SqlDataReader myReader;
+            myReader = getProjectEmployees.ExecuteReader();
+            while (myReader.Read())
+            {
+
+                projectEmployeeFName = myReader["Fname"].ToString();
+                projectEmployeeLName = myReader["Lname"].ToString();
+                projectEmployeePosition = myReader["position"].ToString();
+                projectEmployeeFName = projectEmployeeFName.PadRight(40 - projectEmployeeFName.Length);
+                projectEmployeeLName = projectEmployeeLName.PadRight(40 - projectEmployeeLName.Length);
+
+                currentInfo = currentInfo + string.Format(("{0}{1}{2}"), projectEmployeeFName, projectEmployeeLName, projectEmployeePosition) + Environment.NewLine;
+
+
+            }
+            return myReader;
+        }
+
+        //Finalizes project by removing project,requirements,risks,employees,and effort from database. Moves projec to archive table
+        private static void executeProjectFinalize(SqlParameter LParam1, SqlCommand moveToArchiveTable, SqlCommand removeRequirements, SqlCommand removeEmployees, SqlCommand removeEffortHours, SqlCommand removeRisks, SqlCommand removeProject)
+        {
+            moveToArchive(LParam1, moveToArchiveTable);
+            removeRequirement(LParam1, removeRequirements);
+            removeEmployee(LParam1, removeEmployees);
+            removeEffort(LParam1, removeEffortHours);
+            removeRisk(LParam1, removeRisks);
+            removeRisks.Parameters.Remove(LParam1);
+            removedProject(LParam1, removeProject);
+        }
+
+        private static void executeUpdateEffortHours(SqlParameter LParam1, SqlParameter LParam2, SqlParameter LParam3, SqlParameter LParam4, SqlParameter LParam5, SqlParameter LParam6, SqlCommand updateEfforHours)
+        {
+            updateEfforHours.Parameters.Add(LParam1);
+            updateEfforHours.Parameters.Add(LParam2);
+            updateEfforHours.Parameters.Add(LParam3);
+            updateEfforHours.Parameters.Add(LParam4);
+            updateEfforHours.Parameters.Add(LParam5);
+            updateEfforHours.Parameters.Add(LParam6);
+            systemConnection.Open();
+            updateEfforHours.ExecuteNonQuery();
+            systemConnection.Close();
+            updateEfforHours.Parameters.Remove(LParam1);
+            updateEfforHours.Parameters.Remove(LParam2);
+            updateEfforHours.Parameters.Remove(LParam3);
+            updateEfforHours.Parameters.Remove(LParam4);
+            updateEfforHours.Parameters.Remove(LParam5);
+            updateEfforHours.Parameters.Remove(LParam6);
+        }
+
+        private static void removeRisk(SqlParameter LParam1, SqlCommand removeRisks)
+        {
+            removeRisks.Parameters.Add(LParam1);
+            systemConnection.Open();
+            removeRisks.ExecuteNonQuery();
+            systemConnection.Close();
+        }
+
+        private static void removeEffort(SqlParameter LParam1, SqlCommand removeEffortHours)
+        {
+            removeEffortHours.Parameters.Add(LParam1);
+            systemConnection.Open();
+            removeEffortHours.ExecuteNonQuery();
+            systemConnection.Close();
+            removeEffortHours.Parameters.Remove(LParam1);
+        }
+
+        private static void removeEmployee(SqlParameter LParam1, SqlCommand removeEmployees)
+        {
+            removeEmployees.Parameters.Add(LParam1);
+            systemConnection.Open();
+            removeEmployees.ExecuteNonQuery();
+            systemConnection.Close();
+            removeEmployees.Parameters.Remove(LParam1);
+        }
+
+        private static void removeRequirement(SqlParameter LParam1, SqlCommand removeRequirements)
+        {
+            removeRequirements.Parameters.Add(LParam1);
+            systemConnection.Open();
+            removeRequirements.ExecuteNonQuery();
+            systemConnection.Close();
+            removeRequirements.Parameters.Remove(LParam1);
+        }
+
+        private static void moveToArchive(SqlParameter LParam1, SqlCommand moveToArchiveTable)
+        {
+            moveToArchiveTable.Parameters.Add(LParam1);
+            systemConnection.Open();
+            moveToArchiveTable.ExecuteNonQuery();
+            systemConnection.Close();
+            moveToArchiveTable.Parameters.Remove(LParam1);
+        }
+
+        private static void removedProject(SqlParameter LParam1, SqlCommand removeProject)
+        {
+            removeProject.Parameters.Add(LParam1);
+            systemConnection.Open();
+            removeProject.ExecuteNonQuery();
+            systemConnection.Close();
+            removeProject.Parameters.Remove(LParam1);
+        }
+
+       
         
 
         private bool doesProjectExist(string projectName,int id,SqlParameter LParam, SqlParameter LParam2)

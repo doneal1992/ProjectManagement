@@ -38,6 +38,7 @@ namespace Project_Tracking_System
                         projManagerFNameTextbox.ReadOnly = true;
                         projManagerLNameTextbox.ReadOnly = true;
                         projDescriptionTxtBox.ReadOnly = true;
+                        projDescriptionTxtBox.ReadOnly = true;
                         projManagerIDTextbox.ReadOnly = true;
                         addEmpBtn.Visible = true;
                         addRequirementsBtn.Visible = true;

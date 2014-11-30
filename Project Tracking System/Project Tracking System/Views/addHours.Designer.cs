@@ -46,7 +46,8 @@
             // 
             this.designHoursLbl.AutoSize = true;
             this.designHoursLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.designHoursLbl.Location = new System.Drawing.Point(39, 36);
+            this.designHoursLbl.Location = new System.Drawing.Point(52, 44);
+            this.designHoursLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.designHoursLbl.Name = "designHoursLbl";
             this.designHoursLbl.Size = new System.Drawing.Size(124, 13);
             this.designHoursLbl.TabIndex = 0;
@@ -56,7 +57,8 @@
             // 
             this.codingHoursLbl.AutoSize = true;
             this.codingHoursLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codingHoursLbl.Location = new System.Drawing.Point(39, 87);
+            this.codingHoursLbl.Location = new System.Drawing.Point(52, 107);
+            this.codingHoursLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.codingHoursLbl.Name = "codingHoursLbl";
             this.codingHoursLbl.Size = new System.Drawing.Size(124, 13);
             this.codingHoursLbl.TabIndex = 1;
@@ -66,7 +68,8 @@
             // 
             this.reqAnalysisLbl.AutoSize = true;
             this.reqAnalysisLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqAnalysisLbl.Location = new System.Drawing.Point(39, 140);
+            this.reqAnalysisLbl.Location = new System.Drawing.Point(52, 172);
+            this.reqAnalysisLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.reqAnalysisLbl.Name = "reqAnalysisLbl";
             this.reqAnalysisLbl.Size = new System.Drawing.Size(206, 13);
             this.reqAnalysisLbl.TabIndex = 2;
@@ -76,7 +79,8 @@
             // 
             this.testHoursLbl.AutoSize = true;
             this.testHoursLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testHoursLbl.Location = new System.Drawing.Point(39, 198);
+            this.testHoursLbl.Location = new System.Drawing.Point(52, 244);
+            this.testHoursLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.testHoursLbl.Name = "testHoursLbl";
             this.testHoursLbl.Size = new System.Drawing.Size(127, 13);
             this.testHoursLbl.TabIndex = 3;
@@ -86,7 +90,8 @@
             // 
             this.projManagementLbl.AutoSize = true;
             this.projManagementLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projManagementLbl.Location = new System.Drawing.Point(39, 253);
+            this.projManagementLbl.Location = new System.Drawing.Point(52, 311);
+            this.projManagementLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projManagementLbl.Name = "projManagementLbl";
             this.projManagementLbl.Size = new System.Drawing.Size(201, 13);
             this.projManagementLbl.TabIndex = 4;
@@ -94,44 +99,50 @@
             // 
             // designHoursTxtbox
             // 
-            this.designHoursTxtbox.Location = new System.Drawing.Point(288, 36);
+            this.designHoursTxtbox.Location = new System.Drawing.Point(384, 44);
+            this.designHoursTxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.designHoursTxtbox.Name = "designHoursTxtbox";
-            this.designHoursTxtbox.Size = new System.Drawing.Size(53, 20);
+            this.designHoursTxtbox.Size = new System.Drawing.Size(69, 22);
             this.designHoursTxtbox.TabIndex = 5;
             // 
             // codingHoursTxtBox
             // 
-            this.codingHoursTxtBox.Location = new System.Drawing.Point(288, 87);
+            this.codingHoursTxtBox.Location = new System.Drawing.Point(384, 107);
+            this.codingHoursTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codingHoursTxtBox.Name = "codingHoursTxtBox";
-            this.codingHoursTxtBox.Size = new System.Drawing.Size(53, 20);
+            this.codingHoursTxtBox.Size = new System.Drawing.Size(69, 22);
             this.codingHoursTxtBox.TabIndex = 6;
             // 
             // requirementsAnalysisTxtbox
             // 
-            this.requirementsAnalysisTxtbox.Location = new System.Drawing.Point(288, 140);
+            this.requirementsAnalysisTxtbox.Location = new System.Drawing.Point(384, 172);
+            this.requirementsAnalysisTxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.requirementsAnalysisTxtbox.Name = "requirementsAnalysisTxtbox";
-            this.requirementsAnalysisTxtbox.Size = new System.Drawing.Size(53, 20);
+            this.requirementsAnalysisTxtbox.Size = new System.Drawing.Size(69, 22);
             this.requirementsAnalysisTxtbox.TabIndex = 7;
             // 
             // testingHoursTxtbox
             // 
-            this.testingHoursTxtbox.Location = new System.Drawing.Point(288, 193);
+            this.testingHoursTxtbox.Location = new System.Drawing.Point(384, 238);
+            this.testingHoursTxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.testingHoursTxtbox.Name = "testingHoursTxtbox";
-            this.testingHoursTxtbox.Size = new System.Drawing.Size(53, 20);
+            this.testingHoursTxtbox.Size = new System.Drawing.Size(69, 22);
             this.testingHoursTxtbox.TabIndex = 8;
             // 
             // projManagementHoursTxtbox
             // 
-            this.projManagementHoursTxtbox.Location = new System.Drawing.Point(288, 248);
+            this.projManagementHoursTxtbox.Location = new System.Drawing.Point(384, 305);
+            this.projManagementHoursTxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.projManagementHoursTxtbox.Name = "projManagementHoursTxtbox";
-            this.projManagementHoursTxtbox.Size = new System.Drawing.Size(53, 20);
+            this.projManagementHoursTxtbox.Size = new System.Drawing.Size(69, 22);
             this.projManagementHoursTxtbox.TabIndex = 9;
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(67, 290);
+            this.saveBtn.Location = new System.Drawing.Point(89, 357);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(79, 27);
+            this.saveBtn.Size = new System.Drawing.Size(105, 33);
             this.saveBtn.TabIndex = 10;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -139,9 +150,10 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(250, 290);
+            this.cancelBtn.Location = new System.Drawing.Point(333, 357);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(91, 27);
+            this.cancelBtn.Size = new System.Drawing.Size(121, 33);
             this.cancelBtn.TabIndex = 11;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -149,9 +161,9 @@
             // 
             // addHours
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 329);
+            this.ClientSize = new System.Drawing.Size(525, 405);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.projManagementHoursTxtbox);
@@ -164,6 +176,8 @@
             this.Controls.Add(this.reqAnalysisLbl);
             this.Controls.Add(this.codingHoursLbl);
             this.Controls.Add(this.designHoursLbl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(543, 452);
             this.Name = "addHours";
             this.Text = "Add Effort Hours";
             this.ResumeLayout(false);

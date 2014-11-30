@@ -42,7 +42,8 @@
             // 
             this.firstNameLbl.AutoSize = true;
             this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLbl.Location = new System.Drawing.Point(12, 24);
+            this.firstNameLbl.Location = new System.Drawing.Point(16, 30);
+            this.firstNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.firstNameLbl.Name = "firstNameLbl";
             this.firstNameLbl.Size = new System.Drawing.Size(67, 13);
             this.firstNameLbl.TabIndex = 0;
@@ -52,7 +53,8 @@
             // 
             this.lastNameLbl.AutoSize = true;
             this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLbl.Location = new System.Drawing.Point(10, 86);
+            this.lastNameLbl.Location = new System.Drawing.Point(13, 106);
+            this.lastNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lastNameLbl.Name = "lastNameLbl";
             this.lastNameLbl.Size = new System.Drawing.Size(67, 13);
             this.lastNameLbl.TabIndex = 1;
@@ -62,7 +64,8 @@
             // 
             this.positionLbl.AutoSize = true;
             this.positionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionLbl.Location = new System.Drawing.Point(12, 151);
+            this.positionLbl.Location = new System.Drawing.Point(16, 186);
+            this.positionLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.positionLbl.Name = "positionLbl";
             this.positionLbl.Size = new System.Drawing.Size(52, 13);
             this.positionLbl.TabIndex = 2;
@@ -70,30 +73,34 @@
             // 
             // firstNameTxtbox
             // 
-            this.firstNameTxtbox.Location = new System.Drawing.Point(132, 24);
+            this.firstNameTxtbox.Location = new System.Drawing.Point(176, 30);
+            this.firstNameTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.firstNameTxtbox.Name = "firstNameTxtbox";
-            this.firstNameTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.firstNameTxtbox.Size = new System.Drawing.Size(132, 22);
             this.firstNameTxtbox.TabIndex = 3;
             // 
             // lastNameTxtbox
             // 
-            this.lastNameTxtbox.Location = new System.Drawing.Point(132, 83);
+            this.lastNameTxtbox.Location = new System.Drawing.Point(176, 102);
+            this.lastNameTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.lastNameTxtbox.Name = "lastNameTxtbox";
-            this.lastNameTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.lastNameTxtbox.Size = new System.Drawing.Size(132, 22);
             this.lastNameTxtbox.TabIndex = 4;
             // 
             // positionTxtbox
             // 
-            this.positionTxtbox.Location = new System.Drawing.Point(132, 151);
+            this.positionTxtbox.Location = new System.Drawing.Point(176, 186);
+            this.positionTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.positionTxtbox.Name = "positionTxtbox";
-            this.positionTxtbox.Size = new System.Drawing.Size(100, 20);
+            this.positionTxtbox.Size = new System.Drawing.Size(132, 22);
             this.positionTxtbox.TabIndex = 5;
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(24, 213);
+            this.saveBtn.Location = new System.Drawing.Point(32, 262);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(89, 24);
+            this.saveBtn.Size = new System.Drawing.Size(105, 33);
             this.saveBtn.TabIndex = 6;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -101,9 +108,10 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(186, 213);
+            this.cancelBtn.Location = new System.Drawing.Point(248, 262);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(89, 24);
+            this.cancelBtn.Size = new System.Drawing.Size(105, 33);
             this.cancelBtn.TabIndex = 7;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -111,9 +119,9 @@
             // 
             // employeeInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 252);
+            this.ClientSize = new System.Drawing.Size(407, 310);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.positionTxtbox);
@@ -122,8 +130,10 @@
             this.Controls.Add(this.positionLbl);
             this.Controls.Add(this.lastNameLbl);
             this.Controls.Add(this.firstNameLbl);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(425, 357);
             this.Name = "employeeInfo";
-            this.Text = "Employee Info";
+            this.Text = "Add Employee";
             this.ResumeLayout(false);
             this.PerformLayout();
 

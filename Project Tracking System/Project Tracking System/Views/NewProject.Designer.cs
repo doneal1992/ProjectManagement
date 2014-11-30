@@ -51,7 +51,8 @@
             // 
             this.projectNameLabel.AutoSize = true;
             this.projectNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectNameLabel.Location = new System.Drawing.Point(4, 44);
+            this.projectNameLabel.Location = new System.Drawing.Point(5, 54);
+            this.projectNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectNameLabel.Name = "projectNameLabel";
             this.projectNameLabel.Size = new System.Drawing.Size(83, 13);
             this.projectNameLabel.TabIndex = 0;
@@ -61,7 +62,8 @@
             // 
             this.projectManagerLabel.AutoSize = true;
             this.projectManagerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectManagerLabel.Location = new System.Drawing.Point(4, 97);
+            this.projectManagerLabel.Location = new System.Drawing.Point(5, 119);
+            this.projectManagerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectManagerLabel.Name = "projectManagerLabel";
             this.projectManagerLabel.Size = new System.Drawing.Size(100, 13);
             this.projectManagerLabel.TabIndex = 1;
@@ -71,7 +73,8 @@
             // 
             this.projectManagerFNameLabel.AutoSize = true;
             this.projectManagerFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectManagerFNameLabel.Location = new System.Drawing.Point(136, 77);
+            this.projectManagerFNameLabel.Location = new System.Drawing.Point(181, 95);
+            this.projectManagerFNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectManagerFNameLabel.Name = "projectManagerFNameLabel";
             this.projectManagerFNameLabel.Size = new System.Drawing.Size(67, 13);
             this.projectManagerFNameLabel.TabIndex = 2;
@@ -81,7 +84,8 @@
             // 
             this.projectManagerLNameLabel.AutoSize = true;
             this.projectManagerLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectManagerLNameLabel.Location = new System.Drawing.Point(304, 77);
+            this.projectManagerLNameLabel.Location = new System.Drawing.Point(405, 95);
+            this.projectManagerLNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectManagerLNameLabel.Name = "projectManagerLNameLabel";
             this.projectManagerLNameLabel.Size = new System.Drawing.Size(67, 13);
             this.projectManagerLNameLabel.TabIndex = 3;
@@ -91,7 +95,8 @@
             // 
             this.projectManagerIDLabel.AutoSize = true;
             this.projectManagerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectManagerIDLabel.Location = new System.Drawing.Point(475, 77);
+            this.projectManagerIDLabel.Location = new System.Drawing.Point(633, 95);
+            this.projectManagerIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectManagerIDLabel.Name = "projectManagerIDLabel";
             this.projectManagerIDLabel.Size = new System.Drawing.Size(67, 13);
             this.projectManagerIDLabel.TabIndex = 4;
@@ -99,38 +104,43 @@
             // 
             // projNameTextBox
             // 
-            this.projNameTextBox.Location = new System.Drawing.Point(123, 44);
+            this.projNameTextBox.Location = new System.Drawing.Point(164, 54);
+            this.projNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.projNameTextBox.Name = "projNameTextBox";
-            this.projNameTextBox.Size = new System.Drawing.Size(203, 20);
+            this.projNameTextBox.Size = new System.Drawing.Size(269, 22);
             this.projNameTextBox.TabIndex = 5;
             // 
             // projManagerFNameTextbox
             // 
-            this.projManagerFNameTextbox.Location = new System.Drawing.Point(123, 97);
+            this.projManagerFNameTextbox.Location = new System.Drawing.Point(164, 119);
+            this.projManagerFNameTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.projManagerFNameTextbox.Name = "projManagerFNameTextbox";
-            this.projManagerFNameTextbox.Size = new System.Drawing.Size(99, 20);
+            this.projManagerFNameTextbox.Size = new System.Drawing.Size(131, 22);
             this.projManagerFNameTextbox.TabIndex = 6;
             // 
             // projManagerLNameTextbox
             // 
-            this.projManagerLNameTextbox.Location = new System.Drawing.Point(291, 97);
+            this.projManagerLNameTextbox.Location = new System.Drawing.Point(388, 119);
+            this.projManagerLNameTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.projManagerLNameTextbox.Name = "projManagerLNameTextbox";
-            this.projManagerLNameTextbox.Size = new System.Drawing.Size(99, 20);
+            this.projManagerLNameTextbox.Size = new System.Drawing.Size(131, 22);
             this.projManagerLNameTextbox.TabIndex = 7;
             // 
             // projManagerIDTextbox
             // 
-            this.projManagerIDTextbox.Location = new System.Drawing.Point(465, 97);
+            this.projManagerIDTextbox.Location = new System.Drawing.Point(620, 119);
+            this.projManagerIDTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.projManagerIDTextbox.MaxLength = 8;
             this.projManagerIDTextbox.Name = "projManagerIDTextbox";
-            this.projManagerIDTextbox.Size = new System.Drawing.Size(99, 20);
+            this.projManagerIDTextbox.Size = new System.Drawing.Size(131, 22);
             this.projManagerIDTextbox.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 149);
+            this.label1.Location = new System.Drawing.Point(5, 183);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 9;
@@ -138,17 +148,19 @@
             // 
             // projDescriptionTxtBox
             // 
-            this.projDescriptionTxtBox.Location = new System.Drawing.Point(123, 149);
+            this.projDescriptionTxtBox.Location = new System.Drawing.Point(164, 183);
+            this.projDescriptionTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.projDescriptionTxtBox.Name = "projDescriptionTxtBox";
-            this.projDescriptionTxtBox.Size = new System.Drawing.Size(752, 192);
+            this.projDescriptionTxtBox.Size = new System.Drawing.Size(1001, 235);
             this.projDescriptionTxtBox.TabIndex = 10;
             this.projDescriptionTxtBox.Text = "";
             // 
             // addEmpBtn
             // 
-            this.addEmpBtn.Location = new System.Drawing.Point(123, 361);
+            this.addEmpBtn.Location = new System.Drawing.Point(164, 444);
+            this.addEmpBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addEmpBtn.Name = "addEmpBtn";
-            this.addEmpBtn.Size = new System.Drawing.Size(126, 22);
+            this.addEmpBtn.Size = new System.Drawing.Size(168, 27);
             this.addEmpBtn.TabIndex = 11;
             this.addEmpBtn.Text = "Add Employee";
             this.addEmpBtn.UseVisualStyleBackColor = true;
@@ -157,9 +169,10 @@
             // 
             // addRequirementsBtn
             // 
-            this.addRequirementsBtn.Location = new System.Drawing.Point(316, 361);
+            this.addRequirementsBtn.Location = new System.Drawing.Point(421, 444);
+            this.addRequirementsBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addRequirementsBtn.Name = "addRequirementsBtn";
-            this.addRequirementsBtn.Size = new System.Drawing.Size(126, 22);
+            this.addRequirementsBtn.Size = new System.Drawing.Size(168, 27);
             this.addRequirementsBtn.TabIndex = 12;
             this.addRequirementsBtn.Text = "Add Requirements";
             this.addRequirementsBtn.UseVisualStyleBackColor = true;
@@ -168,9 +181,10 @@
             // 
             // addRisksBtn
             // 
-            this.addRisksBtn.Location = new System.Drawing.Point(529, 361);
+            this.addRisksBtn.Location = new System.Drawing.Point(705, 444);
+            this.addRisksBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addRisksBtn.Name = "addRisksBtn";
-            this.addRisksBtn.Size = new System.Drawing.Size(126, 22);
+            this.addRisksBtn.Size = new System.Drawing.Size(168, 27);
             this.addRisksBtn.TabIndex = 13;
             this.addRisksBtn.Text = "Add Risks";
             this.addRisksBtn.UseVisualStyleBackColor = true;
@@ -179,9 +193,10 @@
             // 
             // addHoursBtn
             // 
-            this.addHoursBtn.Location = new System.Drawing.Point(749, 361);
+            this.addHoursBtn.Location = new System.Drawing.Point(999, 444);
+            this.addHoursBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addHoursBtn.Name = "addHoursBtn";
-            this.addHoursBtn.Size = new System.Drawing.Size(126, 22);
+            this.addHoursBtn.Size = new System.Drawing.Size(168, 27);
             this.addHoursBtn.TabIndex = 14;
             this.addHoursBtn.Text = "Add Hours";
             this.addHoursBtn.UseVisualStyleBackColor = true;
@@ -190,9 +205,10 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(847, 21);
+            this.saveBtn.Location = new System.Drawing.Point(1129, 26);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(126, 23);
+            this.saveBtn.Size = new System.Drawing.Size(168, 28);
             this.saveBtn.TabIndex = 15;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -200,19 +216,20 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(847, 72);
+            this.cancelBtn.Location = new System.Drawing.Point(1129, 89);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(126, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(168, 28);
             this.cancelBtn.TabIndex = 16;
-            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.Text = "Done";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // NewProject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 452);
+            this.ClientSize = new System.Drawing.Size(1340, 556);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.addHoursBtn);
@@ -230,6 +247,8 @@
             this.Controls.Add(this.projectManagerFNameLabel);
             this.Controls.Add(this.projectManagerLabel);
             this.Controls.Add(this.projectNameLabel);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1358, 603);
             this.Name = "NewProject";
             this.Text = "New Project";
             this.ResumeLayout(false);
